@@ -3,128 +3,541 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ACPawar Portfolio</title>
-  <meta name="description" content="Snowflake, Power BI, Tableau, SQL, ETL Projects Portfolio" />
+  <title>Amar Pawar | Snowflake BI Developer</title>
+  <meta name="description" content="Portfolio of Amar Pawar - Snowflake BI Developer with experience in Power BI, Tableau, SQL, Data Warehousing, ETL, and Analytics." />
   <style>
-    body {
-      margin: 0;
+    :root{
+      --bg:#f5f7fb;
+      --card:#ffffff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --primary:#0f766e;
+      --primary-dark:#115e59;
+      --accent:#e6fffb;
+      --border:#dbe4ee;
+      --heading:#0f172a;
+      --shadow:0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      margin:0;
       font-family: Arial, sans-serif;
-      background: #f7f9fc;
-      color: #222;
-      line-height: 1.6;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
     }
-    header {
-      background: #0f172a;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
+
+    .container{
+      width:min(1100px, 92%);
+      margin:auto;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.2rem;
+
+    header{
+      background:linear-gradient(135deg, #0f172a, #134e4a);
+      color:#fff;
+      padding:56px 0 40px;
     }
-    header p {
-      margin-top: 10px;
-      font-size: 1.1rem;
-      color: #cbd5e1;
+
+    .hero{
+      display:grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap:28px;
+      align-items:center;
     }
-    nav {
-      background: #1e293b;
-      padding: 12px;
-      text-align: center;
+
+    .hero h1{
+      margin:0 0 12px;
+      font-size:2.6rem;
+      line-height:1.15;
     }
-    nav a {
-      color: white;
-      margin: 0 12px;
-      text-decoration: none;
-      font-weight: bold;
+
+    .hero .tagline{
+      font-size:1.15rem;
+      color:#d1fae5;
+      margin-bottom:16px;
+      font-weight:bold;
     }
-    section {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
-      background: white;
-      margin-top: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+
+    .hero p{
+      margin:0 0 18px;
+      color:#e5e7eb;
+      max-width:700px;
     }
-    h2 {
-      color: #0f172a;
-      margin-bottom: 15px;
+
+    .contact{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:18px;
     }
-    .project {
-      margin-bottom: 20px;
-      padding: 15px;
-      background: #f8fafc;
-      border-left: 5px solid #2563eb;
-      border-radius: 6px;
+
+    .contact span, .contact a{
+      background:rgba(255,255,255,0.12);
+      border:1px solid rgba(255,255,255,0.14);
+      color:#fff;
+      text-decoration:none;
+      padding:10px 14px;
+      border-radius:999px;
+      font-size:0.95rem;
     }
-    footer {
-      text-align: center;
-      padding: 25px;
-      color: #64748b;
+
+    .hero-card{
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.12);
+      border-radius:18px;
+      padding:22px;
+      backdrop-filter:blur(6px);
+    }
+
+    .hero-card h3{
+      margin-top:0;
+      margin-bottom:14px;
+      font-size:1.05rem;
+    }
+
+    .hero-card ul{
+      padding-left:18px;
+      margin:0;
+    }
+
+    nav{
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:#ffffff;
+      border-bottom:1px solid var(--border);
+    }
+
+    .nav-inner{
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
+      padding:14px 10px;
+    }
+
+    nav a{
+      color:var(--heading);
+      text-decoration:none;
+      font-weight:bold;
+      font-size:0.95rem;
+    }
+
+    section{
+      padding:34px 0;
+    }
+
+    .section-title{
+      font-size:1.8rem;
+      margin:0 0 18px;
+      color:var(--heading);
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:24px;
+      box-shadow:var(--shadow);
+    }
+
+    .summary-grid,
+    .skills-grid,
+    .cert-grid,
+    .project-grid{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:18px;
+    }
+
+    .info-box{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:18px;
+      box-shadow:var(--shadow);
+    }
+
+    .info-box h3{
+      margin-top:0;
+      margin-bottom:10px;
+      color:var(--heading);
+      font-size:1.05rem;
+    }
+
+    .pill-wrap{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .pill{
+      background:var(--accent);
+      color:var(--primary-dark);
+      border:1px solid #b7efe7;
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:0.92rem;
+      font-weight:bold;
+    }
+
+    .timeline{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+
+    .timeline-item{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+
+    .timeline-item h3{
+      margin:0 0 6px;
+      color:var(--heading);
+    }
+
+    .timeline-meta{
+      color:var(--muted);
+      font-size:0.96rem;
+      margin-bottom:12px;
+    }
+
+    .timeline-item ul{
+      margin:0;
+      padding-left:18px;
+    }
+
+    .timeline-item li{
+      margin-bottom:8px;
+    }
+
+    .project-card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:20px;
+      box-shadow:var(--shadow);
+    }
+
+    .project-card h3{
+      margin-top:0;
+      margin-bottom:10px;
+      color:var(--heading);
+    }
+
+    .cert-list{
+      margin:0;
+      padding-left:18px;
+    }
+
+    .cert-list li{
+      margin-bottom:8px;
+    }
+
+    footer{
+      padding:28px 0 50px;
+      text-align:center;
+      color:var(--muted);
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:10px;
+      background:var(--primary);
+      color:#fff;
+      text-decoration:none;
+      padding:12px 18px;
+      border-radius:12px;
+      font-weight:bold;
+    }
+
+    .btn:hover{
+      background:var(--primary-dark);
+    }
+
+    @media (max-width: 860px){
+      .hero,
+      .summary-grid,
+      .skills-grid,
+      .cert-grid,
+      .project-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero h1{
+        font-size:2rem;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>ACPawar</h1>
-    <p>Business Intelligence | Snowflake | Power BI | Tableau | SQL | ETL</p>
+    <div class="container hero">
+      <div>
+        <h1>Amar C Pawar</h1>
+        <div class="tagline">Snowflake BI Developer | Power BI | Tableau | SQL | Data Warehousing</div>
+        <p>
+          BI and Data Analytics professional with 4+ years of experience across Power BI,
+          Tableau, SQL, Snowflake, data modeling, reporting modernization, and analytics delivery.
+          Currently focused on Snowflake-based cloud reporting, Medallion architecture, secure data access,
+          and business-ready dashboard development.
+        </p>
+        <div class="contact">
+          <span>Pune, Maharashtra, India</span>
+          <a href="mailto:acpawar22@gmail.com">acpawar22@gmail.com</a>
+          <span>+91 8855886702</span>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>Profile Highlights</h3>
+        <ul>
+          <li>4+ years in BI, reporting, analytics, and dashboard delivery</li>
+          <li>Hands-on Snowflake, Power BI, Tableau, SQL, and ETL workflows</li>
+          <li>Experience in SSRS to Snowflake modernization and governed reporting</li>
+          <li>Built dashboards, validation frameworks, and secure data models</li>
+          <li>Certified in SnowPro Core, PL-300, DP-900, AI-900, Tableau, and Alteryx</li>
+        </ul>
+      </div>
+    </div>
   </header>
 
   <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+    <div class="container nav-inner">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
   </nav>
 
   <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I am a Business Intelligence and Data Analytics professional with experience in
-      Power BI, Tableau, SQL Server, Snowflake, data modeling, and ETL development.
-      I have worked on analytics and reporting projects in the pharma domain and am
-      currently focused on building stronger expertise in Snowflake and modern data platforms.
-    </p>
+    <div class="container">
+      <h2 class="section-title">About</h2>
+      <div class="summary-grid">
+        <div class="info-box">
+          <h3>Who I Am</h3>
+          <p>
+            I work at the intersection of business intelligence and cloud data warehousing,
+            with practical experience in Power BI, Tableau, SQL Server, Snowflake, and data validation.
+            My work includes transforming raw and legacy reporting logic into scalable analytics solutions.
+          </p>
+        </div>
+        <div class="info-box">
+          <h3>What I Focus On</h3>
+          <p>
+            I am especially interested in Snowflake architecture, Medallion-style modeling,
+            reporting migration, secure access design using RBAC/RLS, and creating dashboards that support
+            real business decisions across healthcare and supply chain use cases.
+          </p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section id="skills">
-    <h2>Skills</h2>
-    <p><strong>Tools & Platforms:</strong> Snowflake, Power BI, Tableau, SQL Server, SSRS</p>
-    <p><strong>Technical Skills:</strong> SQL, Data Modeling, ETL, Reporting, Dashboard Development</p>
-    <p><strong>Learning Focus:</strong> Advanced Snowflake, Streams, Tasks, Time Travel, Cortex, Data Engineering</p>
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+        <div class="info-box">
+          <h3>Data & Cloud</h3>
+          <div class="pill-wrap">
+            <span class="pill">Snowflake</span>
+            <span class="pill">SQL Server</span>
+            <span class="pill">MySQL</span>
+            <span class="pill">Azure Data Factory</span>
+            <span class="pill">Microsoft OneLake</span>
+            <span class="pill">Apache Iceberg</span>
+          </div>
+        </div>
+        <div class="info-box">
+          <h3>BI & Visualization</h3>
+          <div class="pill-wrap">
+            <span class="pill">Power BI Desktop</span>
+            <span class="pill">Power BI Service</span>
+            <span class="pill">Tableau Desktop</span>
+            <span class="pill">Tableau Server</span>
+            <span class="pill">Dashboard Design</span>
+            <span class="pill">Data Validation</span>
+          </div>
+        </div>
+        <div class="info-box">
+          <h3>Snowflake Work</h3>
+          <div class="pill-wrap">
+            <span class="pill">Medallion Architecture</span>
+            <span class="pill">RBAC</span>
+            <span class="pill">RLS</span>
+            <span class="pill">Views</span>
+            <span class="pill">Table Functions</span>
+            <span class="pill">Dynamic Tables</span>
+            <span class="pill">COPY INTO</span>
+            <span class="pill">Stages</span>
+            <span class="pill">Tasks</span>
+          </div>
+        </div>
+        <div class="info-box">
+          <h3>Programming & Tools</h3>
+          <div class="pill-wrap">
+            <span class="pill">SQL</span>
+            <span class="pill">Python</span>
+            <span class="pill">JavaScript</span>
+            <span class="pill">HTML</span>
+            <span class="pill">CSS</span>
+            <span class="pill">Git</span>
+            <span class="pill">JIRA</span>
+            <span class="pill">MS Excel</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <h2 class="section-title">Experience</h2>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <h3>Software Engineer (Snowflake + BI Developer) — Tech Mahindra Ltd</h3>
+          <div class="timeline-meta">Pune, India | March 2025 – Present | Domain: Health Care</div>
+          <ul>
+            <li>Contributed to migration of a multi-tenant SSRS/SQL Server reporting suite into a governed Snowflake Medallion architecture.</li>
+            <li>Integrated Microsoft OneLake with Snowflake using Apache Iceberg tables, Catalog Integration, and Catalog-Linked Database patterns.</li>
+            <li>Re-engineered legacy SQL Server stored procedures into Snowflake gold-layer table functions and views.</li>
+            <li>Implemented Row Access Policies to shift security from application logic to database-layer controls.</li>
+            <li>Built 5+ interactive Power BI dashboards using Snowflake data for business reporting and insight delivery.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <h3>BI Developer — Coders Brain Technology</h3>
+          <div class="timeline-meta">Bangalore, India | April 2024 – March 2025 | Project: File Monitoring Analysis | Domain: Health Care</div>
+          <ul>
+            <li>Developed 3+ Tableau dashboards using integrated data from SQL Server, Snowflake, and Tableau Server.</li>
+            <li>Used Snowflake for data extraction, cleaning, preparation, and transformation to support reporting workflows.</li>
+            <li>Created Snowflake objects including tables, stages, stored procedures, tasks, and COPY INTO pipelines.</li>
+            <li>Designed dashboards with filters, parameters, calculations, and interactive Tableau features.</li>
+            <li>Managed Tableau Server extract refreshes, validation, peer reviews, and client feedback incorporation.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <h3>BI Developer — Coders Brain Technology</h3>
+          <div class="timeline-meta">Bangalore, India | Aug 2022 – March 2024 | Project: Process Owner Analysis | Domain: Supply Chain Management</div>
+          <ul>
+            <li>Created 10+ Power BI dashboards for internal process and inventory monitoring use cases.</li>
+            <li>Worked directly with clients to gather requirements and deliver ad-hoc dashboard enhancements.</li>
+            <li>Performed scheduled refresh monitoring in Power BI Service and SQL-based data validation in SSMS.</li>
+            <li>Handled multiple Agile workstreams while ensuring timely delivery and reporting accuracy.</li>
+            <li>Worked independently and collaboratively on reporting tasks in a deadline-driven environment.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
   </section>
 
   <section id="projects">
-    <h2>Projects</h2>
+    <div class="container">
+      <h2 class="section-title">Project Highlights</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <h3>SSRS to Snowflake Reporting Modernization</h3>
+          <p>
+            Supported migration of legacy SQL Server/SSRS reporting into a Snowflake Medallion model,
+            improving governance, security, and maintainability for downstream Power BI reporting.
+          </p>
+        </div>
 
-    <div class="project">
-      <h3>Snowflake Reporting Migration</h3>
-      <p>Migrated reporting workloads from SQL Server/SSRS to Snowflake for improved scalability and performance.</p>
+        <div class="project-card">
+          <h3>OneLake + Snowflake Iceberg Integration</h3>
+          <p>
+            Worked on open-format lakehouse integration using Microsoft OneLake and Apache Iceberg tables
+            to mirror source data into Snowflake Bronze without physical duplication.
+          </p>
+        </div>
+
+        <div class="project-card">
+          <h3>Healthcare Tableau Reporting</h3>
+          <p>
+            Built Tableau dashboards with filters, parameters, actions, and scheduled extracts
+            to support healthcare reporting and monitoring needs.
+          </p>
+        </div>
+
+        <div class="project-card">
+          <h3>Supply Chain Power BI Dashboards</h3>
+          <p>
+            Delivered Power BI dashboards for internal process monitoring, ad-hoc reporting,
+            and business-user visibility across supply chain workflows.
+          </p>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="project">
-      <h3>Pharma Analytics Dashboard</h3>
-      <p>Built interactive BI dashboards using Power BI/Tableau to support business reporting and QC processes.</p>
+  <section id="certifications">
+    <div class="container">
+      <h2 class="section-title">Certifications</h2>
+      <div class="card">
+        <ol class="cert-list">
+          <li>SnowPro Core Certification — 2026</li>
+          <li>Microsoft Certified: Azure AI Fundamentals (AI-900) — 2026</li>
+          <li>Microsoft Certified: Azure Data Fundamentals (DP-900) — 2025</li>
+          <li>Microsoft Certified: Power BI Data Analyst Associate (PL-300) — 2025</li>
+          <li>Tableau Desktop Specialist — 2025</li>
+          <li>Alteryx Designer Core Certification — 2025</li>
+        </ol>
+      </div>
     </div>
+  </section>
 
-    <div class="project">
-      <h3>ETL and Data Modeling Work</h3>
-      <p>Designed ETL flows and structured data models to support reporting and analytics use cases across business units.</p>
+  <section id="education">
+    <div class="container">
+      <h2 class="section-title">Education</h2>
+      <div class="card">
+        <h3>Master’s Degree in Design Engineering</h3>
+        <p>Pune University | Dec 2014</p>
+      </div>
     </div>
   </section>
 
   <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: acpawar22@gmail.com</p>
-    <p>Contact: +91 8855886702 </p>
-    <p>Location: Pune, India </p>
-    <p>GitHub: <a href="https://github.com/acpawar229" target="_blank" rel="noopener noreferrer">github.com/acpawar229</a></p>
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <div class="card">
+        <p><strong>Name:</strong> Amar C Pawar</p>
+        <p><strong>Email:</strong> <a href="mailto:acpawar22@gmail.com">acpawar22@gmail.com</a></p>
+        <p><strong>Phone:</strong> +91 8855886702</p>
+        <p><strong>Location:</strong> Pune, Maharashtra, India</p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/acpawar229" target="_blank" rel="noopener noreferrer">github.com/acpawar229</a></p>
+        <p><strong>LinkedIn:</strong> Add your LinkedIn URL here</p>
+        <a class="btn" href="mailto:acpawar22@gmail.com">Contact Me</a>
+      </div>
+    </div>
   </section>
 
   <footer>
-    <p>© 2026 ACPawar Portfolio</p>
+    <div class="container">
+      <p>© 2026 Amar C Pawar | Snowflake BI Developer Portfolio</p>
+    </div>
   </footer>
+
 </body>
 </html>
